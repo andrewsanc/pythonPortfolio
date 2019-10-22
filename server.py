@@ -7,7 +7,19 @@ def home():
 
 @app.route('/about')
 def about():
-  return 'About me!'
+  return render_template('about.html')
+
+@app.route('/works')
+def works():
+  return render_template('works.html')
+
+@app.route('/contact')
+def contact():
+  return render_template('contact.html') 
+
+@app.route('/components')
+def components():
+  return render_template('components.html')
 
 @app.route('/blog')
 def blog():
