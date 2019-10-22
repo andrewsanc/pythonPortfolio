@@ -5,10 +5,10 @@ app = Flask(__name__)
 def helloWorld():
   return render_template('index.html')
 
+@app.route('/about')
+def about():
+  return 'About me!'
+
 @app.route('/blog')
 def blog():
-  return 'this is my blog'
-
-@app.route('/blog/2020/dogs')
-def blog2():
-  return 'this is my dog'
+  return 'My Blog!'
