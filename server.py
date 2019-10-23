@@ -37,7 +37,12 @@ def blog():
 def submitForm():
   if request.method == 'POST':
     data = request.form.to_dict()
-    print(data)
+    writeToFile(data)
     return redirect('/thankyou.html')
   else:
     return 'Something went wrong'
+
+def writeToFile(data):
+  with open('database.txt', mode="a") as database:
+    email, subject, message = data['email'], data['subject'], data['message']
+    file = database.write(f'\n{email}, {subject}, {message}')
